@@ -17,3 +17,27 @@ public class Calculator {
 		String[] parts = input.split(" ");
 		return parts;
 	}
+
+	public static double result(String[] parts) {
+		String num1 = parts[0];
+		String operator = parts[1];
+		String num2 = parts[2];
+
+		double result = 0;
+		switch (operator) {
+			case "+":
+				result = Double.parseDouble(num1) + Double.parseDouble(num2);
+				break;
+			case "-":
+				result = Double.parseDouble(num1) - Double.parseDouble(num2);
+				break;
+			case "x":
+				result = Double.parseDouble(num1) * Double.parseDouble(num2);
+				break;
+			case "/":
+				result = Double.parseDouble(num1) / Double.parseDouble(num2);
+				break;
+		}
+		return result;
+	}
+}
