@@ -12,3 +12,8 @@ public class Calculator {
 		double result = result(parts);
 		System.out.println("結果: " + result);
 	} 
+
+	public static String[] parts(String input) {
+		String[] parts = input.split(" ");
+		return parts;
+	}
