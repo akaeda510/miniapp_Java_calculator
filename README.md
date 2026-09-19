@@ -1,0 +1,5 @@
+# miniapp_Java_calculator
+
+Javaの基礎を習ったのでコンソールで動く電卓ミニアプリを作成しようと思います
+
+
