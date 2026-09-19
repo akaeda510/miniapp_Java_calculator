@@ -7,5 +7,14 @@ public class Calculator {
 		System.out.print("式：");
 		String input = scanner.nextLine();
 		scanner.close();
+
+		parts(input);
 	} 
+
+	public void parts(String input) {
+		String[] parts = input.split(" ");
+		String num1 = parts[0];
+		String operator = parts[1];
+		String num2 = parts[2];
+	}
 }
