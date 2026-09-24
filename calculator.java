@@ -4,21 +4,35 @@ public class Calculator {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("+, -, x, /, =が使用できます (例: 10 + 20 =)");
-		System.out.print("式：");
-		String input = scanner.nextLine();
-		scanner.close();
+		System.out.println("=== 簡易電卓アプリ ===");
+			System.out.println("+, -, x, /, =が使用できます (例: 10 + 20 =)");
+		System.out.println("「exit」または「end」と入力すると終了します。\n");
 
-		try {
-			String[] parts = parts(input);
-			double result = result(parts);
-			System.out.println("結果: " + result);
-		} catch (NumberFormatException e) {
-			System.out.println("エラー: 数値の形式が正しくありません: (" + e.getMessage() + ")");
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("エラー: 式は「数値 演算子 数値」の形式でスペース区切りで入力してください");
-		}
-	} 
+		while(true) {
+			System.out.println("式：");
+			String input = scanner.nextLine().trim();
+			if (input.equalsIgnoreCase("exit") || input.equalsIgnoreCase("end")) {
+				System.out.println("電卓を終了します。");
+					break;
+			}
+
+			if (input.isEmpty()) {
+				continue;
+			}
+
+			try {
+				String[] parts = parts(input);
+				double result = result(parts);
+				System.out.println("結果: " + result);
+			} catch (NumberFormatException e) {
+				System.out.println("エラー: 数値の形式が正しくありません: (" + e.getMessage() + ")");
+
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("エラー: 式は「数値 演算子 数値」の形式でスペース区切りで入力してください");
+			}
+		} 
+		scanner.close();
+	}
 
 	public static String[] parts(String input) {
 		String[] parts = input.split(" ");
