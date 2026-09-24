@@ -8,6 +8,12 @@ public class Calculator {
 		String input = scanner.nextLine();
 		scanner.close();
 
+		try {
+			String[] parts = parts(input);
+			double result = result(parts);
+			System.out.println("結果: " + result);
+		} catch (NumberFormatException e) {
+			System.out.println("エラー: 数値の形式が正しくありません: (" + e.getMessage() + ")");
 		String[] parts = parts(input);
 		double result = result(parts);
 		System.out.println("結果: " + result);
