@@ -14,9 +14,9 @@ public class Calculator {
 			System.out.println("結果: " + result);
 		} catch (NumberFormatException e) {
 			System.out.println("エラー: 数値の形式が正しくありません: (" + e.getMessage() + ")");
-		String[] parts = parts(input);
-		double result = result(parts);
-		System.out.println("結果: " + result);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("エラー: 式は「数値 演算子 数値」の形式でスペース区切りで入力してください");
+		}
 	} 
 
 	public static String[] parts(String input) {
