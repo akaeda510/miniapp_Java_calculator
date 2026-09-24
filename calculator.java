@@ -42,7 +42,11 @@ public class Calculator {
 				result = Double.parseDouble(num1) * Double.parseDouble(num2);
 				break;
 			case "/":
-				result = Double.parseDouble(num1) / Double.parseDouble(num2);
+				double divisor = Double.parseDouble(num2);
+				if (divisor == 0) {
+					throw new ArithmeticException("0で割ることができません");
+				}
+				result = Double.parseDouble(num1) / divisor;
 				break;
 		}
 		return result;
