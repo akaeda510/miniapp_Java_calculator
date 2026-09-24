@@ -4,10 +4,9 @@ public class Calculator {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("+, -, x, /, =が使用できます (例: 10 + 20 =)");
-		System.out.print("式：");
-		String input = scanner.nextLine();
-		scanner.close();
+		System.out.println("=== 簡易電卓アプリ ===");
+			System.out.println("+, -, x, /, =が使用できます (例: 10 + 20 =)");
+		System.out.println("「exit」または「end」と入力すると終了します。\n");
 
 		try {
 			String[] parts = parts(input);
