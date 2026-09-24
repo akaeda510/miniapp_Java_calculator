@@ -38,6 +38,7 @@ public class Calculator {
 				result = Double.parseDouble(num1) - Double.parseDouble(num2);
 				break;
 			case "x":
+			case "*":
 				result = Double.parseDouble(num1) * Double.parseDouble(num2);
 				break;
 			case "/":
